@@ -1,0 +1,78 @@
+{% extends 'profiles/teacher/base_generic.html' %}
+{% block content %}
+
+<div class="calendar title">
+    <table  class="table1" style="width:100%">
+        <h2 class="big-border"></h2>
+                    <tr>
+                        <th> Course Name</th>
+                        <th> Course Room</th>
+                        <th> Course Time</th>
+                    </tr>
+                </table >
+    <h2 class="big-border">Monday</h2>
+        {% if monday %}
+            {% for course in monday %}
+                <table class="table1" style="width:100%">
+                    <tr>
+                        <th> {{ course.name }}</th>
+                        <th> {{ course.room }}</th>
+                        <th> {{ course.time }}</th>
+                    </tr>
+                </table>
+            {% endfor %}
+        {% endif %}
+    <h2 class="big-border">Tuesday</h2>
+        {% if tuesday %}
+            {% for course in tuesday %}
+                <table class="table1" style="width:100%">
+                    <tr>
+                        <th> {{ course.name }}</th>
+                        <th> {{ course.room }}</th>
+                        <th> {{ course.time }}</th>
+                    </tr>
+                </table>
+            {% endfor %}
+        {% endif %}
+    <h2 class="big-border">Wednesday</h2>
+        {% if wednesday %}
+            {% for course in wednesday %}
+                <table class="table1" style="width:100%">
+                    <tr>
+                        <th> {{ course.name }}</th>
+                        <th> {{ course.room }}</th>
+                        <th> {{ course.time }}</th>
+                    </tr>
+                </table>
+            {% endfor %}
+        {% endif %}
+    <h2 class="big-border">Thursday</h2>
+        {% if thursday %}
+            {% for course in thursday %}
+                <table class="table1" style="width:100%">
+                    <tr>
+                        <th> {{ course.name }}</th>
+                        <th> {{ course.room }}</th>
+                        <th> {{ course.time }}</th>
+                    </tr>
+                </table>
+            {% endfor %}
+        {% endif %}
+    <h2 class="big-border">Friday</h2>
+        {% if friday %}
+            {% for course in friday %}
+                <table class="table1" style="width:100%">
+                    <tr>
+                        <th> {{ course.name }}</th>
+                        <th> {{ course.room }}</th>
+                        <th> {{ course.time }}</th>
+                    </tr>
+                </table>
+            {% endfor %}
+        {% endif %}
+</div>
+<div class="button submit-btn">
+    <a href="{% url 'teacher_module:teacher_profile_view' %}">Go back</a>
+</div>
+
+{% endblock %}

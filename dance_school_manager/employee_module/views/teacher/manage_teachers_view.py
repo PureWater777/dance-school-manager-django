@@ -1,0 +1,11 @@
+from authentication_module.models import CustomUser
+from employee_module.views.base.manage_user_view import ManageUserView
+
+class ManageTeachersView(ManageUserView):
+    template = 'profiles/employee/teacher/manage_teachers_view.html'
+    filter_arg = {'is_teacher': True}
+    model = 'users'
+
+
+    def get_search_result(self, searched):
+        return CustomUser.objects.filter(username__contains=searched, **self.filter_arg)

@@ -1,0 +1,15 @@
+
+{% block content %}
+    <table>
+        {% for course in courses_list %}
+            <tr>
+                <th> {{ course.name }}</th>
+                <th> {{ course.description }}</th>
+
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'teacher_module:teacher_profile_view' %}">Go back</a>
+{% endblock %}
+<body>
+</body>

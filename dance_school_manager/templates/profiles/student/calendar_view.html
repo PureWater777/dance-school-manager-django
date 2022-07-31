@@ -1,0 +1,29 @@
+{% extends 'profiles/student/base_generic.html' %}
+{% block content %}
+
+<div class="calendar title">
+                <table class="table1" style="width:100%">
+                    <tr>
+                        <th class="title"> Nazwa </th>
+                        <th class="title"> Pokoj </th>
+                        <th class="title"> Czas </th>
+                    </tr>
+                </table>
+        {% for day in days %}
+            <h2 class="big-border">{{ day.0 }}</h2>
+            {% for course in day.1 %}
+                <table class="table1" style="width:100%">
+                    <tr>
+                        <th class="title"> {{ course.name }}</th>
+                        <th class="title"> {{ course.room }}</th>
+                        <th class="title"> {{ course.time }}</th>
+                    </tr>
+                </table>
+            {% endfor %}
+        {% endfor %}
+</div>
+<div class="button submit-btn">
+    <a href="{% url 'client_module:user_view' %}">Go Back</a>
+</div>
+{% endblock %}
+

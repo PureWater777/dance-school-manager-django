@@ -1,0 +1,23 @@
+{% extends 'profiles/student/base_generic.html' %}
+{% block content %}
+<style>
+body {
+  	text-align: center;
+}
+</style>
+
+
+<div class="course centered">
+		<h3>Input your new data</h3>
+		<div class="flexbox-item flexbox-item-1">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <button class ="btn btn-secondary">Update</button>
+            </form>
+		</div>
+</div>
+<div class="button submit-btn">
+    <a href="{% url 'client_module:user_view' %}">Go Back</a>
+</div>
+{% endblock %}

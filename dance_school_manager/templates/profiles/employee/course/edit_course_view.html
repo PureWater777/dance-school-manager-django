@@ -1,0 +1,262 @@
+{% extends 'profiles/employee/base_generic.html' %}
+{% block content %}
+    <div class="info">
+        {% if emails_not_found %}
+            <p>Given emails are not found in student register!</p>
+            {% for email in emails_not_found %}
+                <p>{{ email }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="container">
+        <form class="form_mc" method="post">
+            {% csrf_token %}
+            <table class="table_mc1">
+                <tr>
+                    <th>Course name:</th>
+                    <th>{{ course_form.name }}</th>
+                </tr>
+                <tr>
+                    <th>Room:</th>
+                    <th>{{ course_form.room }}</th>
+                </tr>
+                <tr>
+                    <th>Description:</th>
+                    <th>{{ course_form.description }}</th>
+                </tr>
+                <tr>
+                    <th>Start date:</th>
+                    <th>{{ course_form.start_date }}</th>
+                </tr>
+                <tr>
+                    <th>End date:</th>
+                    <th>{{ course_form.end_date }}</th>
+                </tr>
+                <tr>
+                    <th>Days:</th>
+                    <th>{{ course_form.days }}</th>
+                </tr>
+                <tr>
+                    <th>Time:</th>
+                    <th>{{ course_form.time }}</th>
+                </tr>
+                <tr>
+                    <th>Student 0 email:</th>
+                    <th>{{ course_form.0_student }}</th>
+                    {% if course_form.0_student.value %}
+                        <td>
+                            <button>
+                                <a href="{% url 'employee_module:remove_student_from_course' course_form.0_student.value  course_id %}">
+                                    X </a>
+                            </button>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 1 email:</th>
+                    <th>{{ course_form.1_student }}</th>
+                    {% if course_form.1_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.1_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 2 email:</th>
+                    <th>{{ course_form.2_student }}</th>
+                    {% if course_form.2_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.2_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 3 email:</th>
+                    <th>{{ course_form.3_student }}</th>
+                    {% if course_form.3_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.3_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 4 email:</th>
+                    <th>{{ course_form.4_student }}</th>
+                    {% if course_form.4_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.4_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 5 email:</th>
+                    <th>{{ course_form.5_student }}</th>
+                    {% if course_form.5_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.5_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 6 email:</th>
+                    <th>{{ course_form.6_student }}</th>
+                    {% if course_form.6_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.6_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+            </table>
+            <table class="table_mc2">
+                </tr>
+                <tr>
+                    <th>Student 7 email:</th>
+                    <th>{{ course_form.7_student }}</th>
+                    {% if course_form.7_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.7_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 8 email:</th>
+                    <th>{{ course_form.8_student }}</th>
+                    {% if course_form.8_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.8_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 9 email:</th>
+                    <th>{{ course_form.9_student }}</th>
+                    {% if course_form.9_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.9_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 10 email:</th>
+                    <th>{{ course_form.10_student }}</th>
+                    {% if course_form.10_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.10_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 11 email:</th>
+                    <th>{{ course_form.11_student }}</th>
+                    {% if course_form.11_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.11_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 12 email:</th>
+                    <th>{{ course_form.12_student }}</th>
+                    {% if course_form.12_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.12_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 13 email:</th>
+                    <th>{{ course_form.13_student }}</th>
+                    {% if course_form.13_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.13_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 14 email:</th>
+                    <th>{{ course_form.14_student }}</th>
+                    {% if course_form.14_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.14_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 15 email:</th>
+                    <th>{{ course_form.15_student }}</th>
+                    {% if course_form.15_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.15_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 16 email:</th>
+                    <th>{{ course_form.16_student }}</th>
+                    {% if course_form.16_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.16_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 17 email:</th>
+                    <th>{{ course_form.17_student }}</th>
+                    {% if course_form.17_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.17_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 18 email:</th>
+                    <th>{{ course_form.18_student }}</th>
+                    {% if course_form.18_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.18_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th>Student 19 email:</th>
+                    <th>{{ course_form.19_student }}</th>
+                    {% if course_form.19_student.value %}
+                        <td>
+                            <a href="{% url 'employee_module:remove_student_from_course' course_form.19_student.value  course_id %}">
+                                X </a>
+                        </td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <th colspan="1">
+                        <button id="input_an">
+                            <a href="{% url 'employee_module:manage_courses_view' %}" id="input_an">
+                                ANULUJ </a>
+                        </button>
+                    </th>
+                    <th colspan="1"><input id="input_mc" type="submit" value="SUBMIT"></th>
+                </tr>
+
+            </table>
+
+        </form>
+    </div>
+{% endblock %}

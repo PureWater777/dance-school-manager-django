@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>Local Library</title>{% endblock %}
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+    <div class="col-md-8 col-sm-10 col-12">
+        {% load static %}
+        <nav>
+            <div class="username">
+                <img src="../../../static/images/profile.jpg">
+                {{ username }}
+            </div>
+            <button class="submit-btn" onclick="location.href = '{{ manage_courses }}'" type="button">MANAGE COURSES
+            </button>
+            <button class="submit-btn" onclick="location.href = '{{ manage_students }}'" type="button">MANAGE STUDENTS
+            </button>
+            <button class="submit-btn" onclick="location.href = '{{ manage_teachers }}'" type="button">MANAGE TEACHERS
+            </button>
+            <button class="submit-btn" onclick="location.href = '/authentication/logout/'" type="button">LOGOUT
+            </button>
+        </nav>
+    </div>
+</div>
+<div class="success_p">
+    {% if warrning %}
+        {{ warrning }}
+    {% endif %}
+
+</div>
+{% block sidebar %}{% endblock %}
+{% block content %}{% endblock %}
+</body>
+</html>

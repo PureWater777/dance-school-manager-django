@@ -1,0 +1,26 @@
+{% extends 'profiles/student/base_generic.html' %}
+{% block content %}
+<div class="abandon centered">
+    <h3>Report Absence</h3>
+
+    <form enctype="multipart/form-data" method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Post"/>
+    </form>
+
+<!--        <form enctype="multipart/form-data" method="POST" action="">-->
+<!--            <input type="hidden" name="csrfmiddlewaretoken" value="ds56HSHgRJS3H42hsMbd3K0DGAALI3IaEW1uuKvZ0DUgCitMUqCsG9x1Ug6fbWwX">-->
+<!--            <p><label for="id_date">Date:</label> <input type="date" name="date" required="" id="id_date"></p>-->
+<!--            <p><label for="id_related_course">Related course:</label> <select name="related_course" required="" id="id_related_course">-->
+<!--            <option value="" selected="">-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>-->
+<!--            <option value="1">Course TestCourse: Some test</option>-->
+<!--            </select></p>-->
+<!--            <input type="submit" value="Post">-->
+<!--    </form>-->
+
+</div>
+<div class="button submit-btn">
+    <a href="{% url 'client_module:user_view' %}">Go Back</a>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'profiles/teacher/base_generic.html' %}
+{% block content %}
+
+<div class="hello">
+    <h2> Welcome {{ username }} to the "{{ certain_course.name }}" course page! </h2>
+</div>
+<div class="coursepage-container">
+  <div class="coursepage-child left">
+    <h2 class="title"> List of Participants</h2>
+    <table class="title" style="width:100%">
+            <tr>
+                <th> Participant Name:</th>
+                <th> Participant Email:</th>
+            </tr>
+        {% for student in students_attended %}
+            <tr>
+                <td> {{ student.username }}</td>
+                <td> {{ student.email }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+  </div>
+  <div class="coursepage-child right">
+    <h2 class="title"> Message box</h2>
+    <table class="title" style="width:100%">
+     <tr>
+         <th> Title:</th>
+         <th> Message:</th>
+         <th> Date posted:</th>
+     </tr>
+     {% for messages in messages_assigned_to_this_course %}
+     <tr>
+         <td> {{ messages.title }} </td>
+         <td> {{ messages.text }} </td>
+         <td> {{ messages.date_created }} </td>
+
+     </tr>
+    {% endfor %}
+    </table>
+  </div>
+</div>
+<div class="button submit-btn">
+    <a href="{% url 'client_module:user_view' %}">Go back</a>
+</div>
+{% endblock %}

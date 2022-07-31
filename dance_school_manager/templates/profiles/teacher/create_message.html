@@ -1,0 +1,14 @@
+{% extends 'profiles/teacher/base_generic.html' %}
+{% block content %}
+<div class="message centered">
+    <h3>Write a Message</h3>
+        <form enctype="multipart/form-data" method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Post"/>
+        </form>
+</div>
+<div class="button submit-btn">
+    <a href="{% url 'teacher_module:courses_view' %}">Go back</a>
+</div>
+{% endblock %}

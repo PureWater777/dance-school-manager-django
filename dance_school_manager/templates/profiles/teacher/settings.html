@@ -1,0 +1,26 @@
+{% extends 'profiles/teacher/base_generic.html' %}
+{% block content %}
+
+<style>
+body {
+  	text-align: center;
+}
+</style>
+
+
+<div class="course centered">
+	<div>
+		<h3>Input your new data</h3>
+		<div>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <button class ="btn btn-secondary">Update</button>
+            </form>
+		</div>
+	</div>
+</div>
+<div class="button submit-btn">
+    <a href="{% url 'teacher_module:teacher_profile_view' %}">Go back</a>
+</div>
+{% endblock %}
